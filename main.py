@@ -24,6 +24,7 @@ def pose_change():
             led.off()
         else:
             power = True
+            led.on()
     #elif pose == 'emergency':
     return 'ok'
 
