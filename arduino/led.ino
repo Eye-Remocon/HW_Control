@@ -49,6 +49,11 @@ void loop() {
       analogWrite(10,0);
       analogWrite(9,255);
     }
+    else if (c == 8){
+      analogWrite(11,255);
+      analogWrite(10,255);
+      analogWrite(9,255);
+    }
 
   }
 }
