@@ -1,7 +1,7 @@
-int RED = 11;
+int RED = 9;
 int GREEN = 10;
-int BLUE = 9;
-String incoming = "";
+int BLUE = 11;
+int c;
 
 
 void setup() {
@@ -12,48 +12,54 @@ void setup() {
 }
 
 void loop() {
-  while (Serial.available()>0){
-    char c = Serial.read();
-    if (c == 1){
-      analogWrite(11,100);
-      analogWrite(10,0);
-      analogWrite(9,255);
+  while (Serial.available()){
+    c = Serial.read();
+    if(c == '0'){
+      analogWrite(RED,255);
+      analogWrite(GREEN,255);
+      analogWrite(BLUE,255);
     }
-    else if (c == 2){
-      analogWrite(11,255);
-      analogWrite(10,192);
-      analogWrite(9,203);
+    else if (c == '1'){
+      analogWrite(RED,116);
+      analogWrite(GREEN,255);
+      analogWrite(BLUE,0);
     }
-    else if (c == 3){
-      analogWrite(11,255);
-      analogWrite(10,0);
-      analogWrite(9,0);
+    else if (c == '2'){
+      analogWrite(RED,0);
+      analogWrite(GREEN,204);
+      analogWrite(BLUE,102);
     }
-    else if (c == 4){
-      analogWrite(11,0);
-      analogWrite(10,255);
-      analogWrite(9,0);
+    else if (c == '3'){
+      analogWrite(RED,0);
+      analogWrite(GREEN,255);
+      analogWrite(BLUE,255);
     }
-    else if (c == 5){
-      analogWrite(11,255);
-      analogWrite(10,50);
-      analogWrite(9,0);
+    else if (c == '4'){
+      analogWrite(RED,255);
+      analogWrite(GREEN,0);
+      analogWrite(BLUE,255);
     }
-    else if (c == 6){
-      analogWrite(11,255);
-      analogWrite(10,255);
-      analogWrite(9,0);
+    else if (c == '5'){
+      analogWrite(RED,0);
+      analogWrite(GREEN,128);
+      analogWrite(BLUE,255);
     }
-    else if (c == 7){
-      analogWrite(11,0);
-      analogWrite(10,0);
-      analogWrite(9,255);
+    else if (c == '6'){
+      analogWrite(RED,0);
+      analogWrite(GREEN,43);
+      analogWrite(BLUE,255);
     }
-    else if (c == 8){
-      analogWrite(11,255);
-      analogWrite(10,255);
-      analogWrite(9,255);
+    else if (c == '7'){
+      analogWrite(RED,255);
+      analogWrite(GREEN,255);
+      analogWrite(BLUE,0);
+    }
+    else if (c == '8'){
+      analogWrite(RED,0);
+      analogWrite(GREEN,0);
+      analogWrite(BLUE,0);
     }
 
   }
+
 }
