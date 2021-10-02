@@ -2,14 +2,14 @@ from flask import Flask, request
 from led import led
 app = Flask(__name__)
 
-power = False
+power = True
 @app.route('/emotion', methods=['POST'])
 def emotion_change():
     global power
     payload = request.get_json()
     emotion = payload['emotion']
     if power:
-        led.color_change(emotion, power)
+        led.color_change(emotion)
     return 'ok'
 
 @app.route('/pose', methods=['POST'])
@@ -29,5 +29,5 @@ def pose_change():
     return 'ok'
 
 if __name__ == "__main__":
-    app.run(debug=True, host='0.0.0.0', port=4500)
+    app.run(debug=True, host='0.0.0.0', port=4000)
 
