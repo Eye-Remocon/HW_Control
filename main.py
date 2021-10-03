@@ -25,7 +25,9 @@ def pose_change():
         else:
             power = True
             led.on()
-    #elif pose == 'emergency':
+    elif pose == 'emergency':
+        power = True
+        led.emergency()
     return 'ok'
 
 if __name__ == "__main__":
