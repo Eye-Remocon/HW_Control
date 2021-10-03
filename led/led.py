@@ -3,7 +3,7 @@ import time
 
 
 def color_change(emotion):
-    ser = serial.Serial('/dev/ttyACM0', 9600)  # 아두이노와 시리얼통신을 위한 포트 연결 및 보드레이트 일치시킴
+    ser = serial.Serial('COM3', 9600)  # 아두이노와 시리얼통신을 위한 포트 연결 및 보드레이트 일치시킴
     count = 0
     while True:
         if count > 2:
@@ -33,7 +33,7 @@ def color_change(emotion):
 
 
 def off():
-    ser = serial.Serial('/dev/ttyACM0', 9600)  # 아두이노와 시리얼통신을 위한 포트 연결 및 보드레이트 일치시킴
+    ser = serial.Serial('COM3', 9600)  # 아두이노와 시리얼통신을 위한 포트 연결 및 보드레이트 일치시킴
     count = 0
     while (True):
         if count > 2:
@@ -46,7 +46,7 @@ def off():
             time.sleep(0.5)
             count += 1
 def on():
-    ser = serial.Serial('/dev/ttyACM0', 9600)  # 아두이노와 시리얼통신을 위한 포트 연결 및 보드레이트 일치시킴
+    ser = serial.Serial('COM3', 9600)  # 아두이노와 시리얼통신을 위한 포트 연결 및 보드레이트 일치시킴
     count = 0
     while (True):
         if count > 2:
@@ -60,7 +60,7 @@ def on():
             count += 1
 
 def emergency():
-    ser = serial.Serial('/dev/ttyACM0', 9600)  # 아두이노와 시리얼통신을 위한 포트 연결 및 보드레이트 일치시킴
+    ser = serial.Serial('COM3', 9600)  # 아두이노와 시리얼통신을 위한 포트 연결 및 보드레이트 일치시킴
     count = 0
     while (True):
         if count > 2:
