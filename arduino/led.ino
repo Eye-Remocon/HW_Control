@@ -2,6 +2,7 @@ int RED = 9;
 int GREEN = 10;
 int BLUE = 11;
 int c;
+boolean emergency = false;
 
 
 void setup() {
@@ -59,6 +60,31 @@ void loop() {
       analogWrite(GREEN,0);
       analogWrite(BLUE,0);
     }
+     else if (c == '9'){
+      emergency = true;
+      analogWrite(RED,255);
+      analogWrite(GREEN,255);
+      analogWrite(BLUE,255);
+      while(emergency){
+      analogWrite(RED,0);
+      analogWrite(GREEN,255);
+      analogWrite(BLUE,255);
+      delay(500);
+      analogWrite(RED,255);
+      analogWrite(GREEN,255);
+      analogWrite(BLUE,255);
+      delay(500);
+      if (Serial.available()){
+      c = Serial.read();
+        if (c == '0' || c =='1' || c =='2' || c =='3' || c =='4' || c == '5' || c == '6' || c == '7' || c == '8'){
+           emergency = false;
+           analogWrite(RED,255);
+           analogWrite(GREEN,255);
+           analogWrite(BLUE,255);
+           break;
+
+        }
+      }
 
   }
 
