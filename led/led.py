@@ -12,17 +12,17 @@ def color_change(emotion):
             print('color')
             if emotion == "ANGRY":
                 val = '1'
-            elif emotion == "DISGUST":
+            elif emotion == "DISGUST" or emotion == 'DISGUSTED':
                 val = '2'
             elif emotion == "HAPPY":
                 val = '3'
-            elif emotion == "FEAR":
+            elif emotion == "FEAR" or emotion == 'CONFUSED':
                 val = '4'
-            elif emotion == "NEUTRAL":
+            elif emotion == "NEUTRAL" or emotion == 'CALM':
                 val = '5'
             elif emotion == "SAD":
                 val = '6'
-            elif emotion == "SURPRISE":
+            elif emotion == "SURPRISE" or emotion == 'SURPRISED':
                 val = '7'
             val = val.encode('utf-8')
 
